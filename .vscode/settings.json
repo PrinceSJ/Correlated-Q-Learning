@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/home/moriaty/anaconda3/envs/tensorflow/bin/python",
+
+    "python.venvPath": "~/anaconda3",
+
+    "python.venvFolders": [
+        "envs",
+        ".pyenv",
+        ".direnv"
+      ]
+}

@@ -1,5 +1,7 @@
 from env import *
-from cvxopt import matrix, solvers
+from cvxopt import *
+
+#from cvxopt import matrix, solvers
 #
 # A = np.array([
 #        [-4, -4],
@@ -383,7 +385,7 @@ for T in range(n_iter):
 
     ERR.append(np.abs(Q1[s_test, 21] - q_sa))
     # print Q1[0]
-    print T
+    print(T)
     #     s = s_prime
     #
     #     # QtableV2 = Q1.sum()

@@ -65,15 +65,22 @@ for T in range(n_iter):
         alpha = alpha - alpha_decayrate
     ERR.append(np.abs(Q1[s0, 4] - q_sa))
     # print np.abs(Q1[s0, 4] - q_sa)
-    print T
+    print(T)
 
 # for i in range(len(ERR)):
 #     print ERR[i]
 # # print ERR
 #
 
-print Q1
+print(Q1)
 
 plt.plot(ERR)
-plt.ylim([0,.5])
+xTicks = np.arange(0,10e5+2,1e5)
+yTicks = np.arange(0,0.54,0.05)
+plt.xticks(xTicks)
+plt.yticks(yTicks)
+plt.xlabel("Simulation Iteration",fontsize=13)#,fontweight='bold'
+plt.ylabel("Q-value Difference",fontsize=13)#fontweight='bold'
+plt.title("Q-learner")
+plt.savefig("Q-learner.png")
 plt.show()

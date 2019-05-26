@@ -1,8 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
 b = 2 # ball, A or B has it
 s = 8 # number of states
 
@@ -295,11 +293,12 @@ def transition(s, a):
         s_prime = [ball, me + a[0], you + a[1]]
 
     np_s_prime = np.array(s_prime)
+    print("1")
     # GET INDEX OF S' STATE
     for i in range(S.shape[0]):
         if np.array_equal(S[i], np_s_prime):
             s_ind = i
-
+    print("2")
     return s_ind
 
 def test_env():
@@ -320,7 +319,7 @@ def test_env():
             world[S[s][2]] = 888
             display = world.copy()
             display = np.reshape(display, (2, 4))
-            print display
+            print(display)
 
             # choose random action get the set of possible s'
             a_number = np.random.randint(25)
@@ -363,7 +362,7 @@ def test_env():
             for i in range(S.shape[0]):
                 if np.array_equal(S[i],np_s_prime):
                     s = i
-                    # print 'index for ',s_prime, ' is ', i
+                    print('index for ',s_prime, ' is ', i)
 
             #
             # s = s_index
@@ -374,7 +373,5 @@ def test_env():
 
 
             if (R_a != 0 or R_b != 0):
-                print "DONE!!!"
+                print("DONE!!!")
                 break
-
-# test_env()

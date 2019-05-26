@@ -1,5 +1,6 @@
 from env import *
 
+
 e = .5 # epsilon
 gamma = .99 # discount
 alpha = .3 # learning rate
@@ -94,15 +95,23 @@ for T in range(n_iter):
     #     alpha = alpha - .0001
     ERR.append(np.abs(Q1[s_test, a_test] - q_sa))
     # print np.abs(Q1[s0, 4] - q_sa)
-    print T
+    print(T)
 
 # for i in range(len(ERR)):
 #     print ERR[i]
 # # print ERR
 #
 
-print Q1
+print(Q1)
 
 plt.plot(ERR)
-plt.ylim([0,.5])
+xTicks = np.arange(0,10e5+2,1e5)
+yTicks = np.arange(0,0.55,0.05)
+plt.xticks(xTicks)
+plt.yticks(yTicks)
+plt.xlabel("Simulation Iteration",fontsize=13)#,fontweight='bold'
+plt.ylabel("Q-value Difference",fontsize=13)#fontweight='bold'
+plt.title("Friend-Q")
+plt.savefig("Friend-Q.png")
 plt.show()
+
